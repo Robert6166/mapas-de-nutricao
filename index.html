@@ -219,6 +219,23 @@
     html { scroll-behavior: auto; }
   }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1633463321565728');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1633463321565728&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -363,7 +380,7 @@
       <p class="de">De <s>R$97</s> por</p>
       <p class="valor"><small>R$</small>17</p>
       <p class="pg">Pagamento único</p>
-      <a class="btn contorno" href="CHECKOUT-ESSENCIAL">Quero só os mapas</a>
+      <a class="btn contorno" href="CHECKOUT-ESSENCIAL" data-plano="Essencial" data-valor="17">Quero só os mapas</a>
     </div>
     <div class="plano top">
       <span class="fita">&#9733; Mais completo · melhor valor</span>
@@ -386,7 +403,7 @@
         <div class="economia">Você economiza<b>R$295</b></div>
       </div>
       <p class="pg">Pagamento único · acesso imediato a tudo</p>
-      <a class="btn" href="CHECKOUT-COMPLETO">Quero o plano completo <svg><use href="#i-seta"/></svg></a>
+      <a class="btn" href="CHECKOUT-COMPLETO" data-plano="Completo" data-valor="37">Quero o plano completo <svg><use href="#i-seta"/></svg></a>
     </div>
   </div>
   <div class="wrap seguro">
@@ -439,5 +456,13 @@
   <p>Material educativo. Não substitui a avaliação individualizada de um nutricionista.</p>
 </footer>
 
+<script>
+  // Meta Pixel: InitiateCheckout ao clicar em um plano
+  document.querySelectorAll('[data-plano]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: a.dataset.plano, value: Number(a.dataset.valor), currency: 'BRL' });
+    });
+  });
+</script>
 </body>
 </html>
