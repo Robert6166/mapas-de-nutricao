@@ -456,13 +456,5 @@ src="https://www.facebook.com/tr?id=1163156372713757&ev=PageView&noscript=1"
   <p>Material educativo. Não substitui a avaliação individualizada de um nutricionista.</p>
 </footer>
 
-<script>
-  // Meta Pixel: InitiateCheckout ao clicar em um plano
-  document.querySelectorAll('[data-plano]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: a.dataset.plano, value: Number(a.dataset.valor), currency: 'BRL' });
-    });
-  });
-</script>
 </body>
 </html>
