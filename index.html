@@ -99,6 +99,8 @@
   .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
   .card { background: #F4F2EA; color: var(--tinta); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
   .card img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .card .planilha { aspect-ratio: 1; overflow: hidden; background: #fff; }
+  .card .planilha img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: top center; }
   .card .corpo { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
   .card small { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #A57A20; }
   .card h3 { font-family: var(--display); font-size: 20px; color: var(--verde); margin: 6px 0 8px; line-height: 1.2; }
@@ -106,7 +108,7 @@
   .card .preco { display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #D2C8AE; margin-top: 16px; padding-top: 14px; }
   .card .preco s { font-family: var(--display); font-weight: 800; color: var(--vermelho); font-size: 18px; }
   .card .preco span { font-weight: 800; font-size: 14px; color: var(--folha); background: var(--folha-clara); padding: 4px 12px; border-radius: 99px; }
-  .card.fecha { grid-column: span 2; background: transparent; border: 2px dashed rgba(255,255,255,.25); color: #DCE8D6; justify-content: center; align-items: center; text-align: center; padding: 30px; gap: 18px; }
+  .card.fecha { background: transparent; border: 2px dashed rgba(255,255,255,.25); color: #DCE8D6; justify-content: center; align-items: center; text-align: center; padding: 30px; gap: 18px; }
   .card.fecha p { color: #DCE8D6; flex: 0; font-size: 16px; }
   .card.fecha b { font-family: var(--display); font-size: 46px; color: #FFB677; line-height: 1; }
   .soma { text-align: center; margin-top: 36px; font-size: 18px; color: #DCE8D6; }
@@ -192,7 +194,6 @@
     section { padding: 64px 0; }
     .recebe .grid { grid-template-columns: 1fr; gap: 36px; }
     .perfis, .cards { grid-template-columns: 1fr 1fr; }
-    .card.fecha { grid-column: 1 / -1; }
     .planos .lista { grid-template-columns: 1fr; gap: 36px; }
     .plano.top { order: -1; }
     .numeros { grid-template-columns: 1fr 1fr; }
@@ -339,7 +340,7 @@ src="https://www.facebook.com/tr?id=1163156372713757&ev=PageView&noscript=1"
 <section class="bonus escuro">
   <div class="wrap centro">
     <span class="tag">Bônus exclusivos</span>
-    <h2>Quem escolhe o plano completo leva 4 bônus junto.</h2>
+    <h2>Quem escolhe o plano completo leva 5 bônus junto.</h2>
     <p class="lead">Ferramentas prontas pra usar na rotina de estudo ou de consultório — inclusas sem custo adicional.</p>
   </div>
   <div class="wrap cards">
@@ -347,9 +348,10 @@ src="https://www.facebook.com/tr?id=1163156372713757&ev=PageView&noscript=1"
     <article class="card"><img src="img/bonus2-substituicoes.jpg" alt="Lista de Substituições Alimentares" loading="lazy"><div class="corpo"><small>Bônus 2</small><h3>Lista de Substituições Alimentares</h3><p>Tabela com trocas inteligentes pra variar o plano alimentar sem perder o equilíbrio nutricional.</p><div class="preco"><s>R$37</s><span>Incluso</span></div></div></article>
     <article class="card"><img src="img/bonus3-templates.jpg" alt="Templates de Plano Alimentar" loading="lazy"><div class="corpo"><small>Bônus 3</small><h3>Templates de Plano Alimentar</h3><p>Modelos preenchíveis e prontos pra entregar aos pacientes com padrão visual profissional.</p><div class="preco"><s>R$57</s><span>Incluso</span></div></div></article>
     <article class="card"><img src="img/bonus4-flashcards.jpg" alt="Flashcards de Revisão Rápida" loading="lazy"><div class="corpo"><small>Bônus 4</small><h3>Flashcards de Revisão Rápida</h3><p>Cartões com os conceitos que mais caem em prova, pra revisar em cinco minutos livres.</p><div class="preco"><s>R$37</s><span>Incluso</span></div></div></article>
+    <article class="card"><div class="planilha"><img src="img/bonus5-calculadora.jpg" alt="Planilha Calculadora de TMB, GET e Macros preenchida com um exemplo" loading="lazy"></div><div class="corpo"><small>Bônus 5</small><h3>Calculadora de TMB, GET e Macros</h3><p>Planilha com fórmulas prontas pra calcular necessidades energéticas na hora, sem erro de conta.</p><div class="preco"><s>R$57</s><span>Incluso</span></div></div></article>
     <div class="card fecha"><b>+100</b><p>mapas mentais organizados em 17 módulos, incluídos no plano completo.</p><a class="btn" href="#oferta">Ver os planos</a></div>
   </div>
-  <p class="soma wrap">Valor total dos bônus: <b>R$178</b> — mais os mapas mentais, avaliados em <b>R$97</b>.</p>
+  <p class="soma wrap">Valor total dos bônus: <b>R$235</b> — mais os mapas mentais, avaliados em <b>R$97</b>.</p>
 </section>
 
 <!-- ============ PLANOS ============ -->
@@ -373,15 +375,16 @@ src="https://www.facebook.com/tr?id=1163156372713757&ev=PageView&noscript=1"
         <li class="nao">Lista de Substituições Alimentares</li>
         <li class="nao">Templates de Plano Alimentar</li>
         <li class="nao">Flashcards de Revisão Rápida</li>
+        <li class="nao">Calculadora de TMB, GET e Macros</li>
       </ul>
       <p class="de">De <s>R$97</s> por</p>
       <p class="valor"><small>R$</small>17</p>
       <p class="pg">Pagamento único</p>
-      <a class="btn contorno" href="https://app.zuptos.com.br/checkout/3570702b67ac7e2b" data-plano="Essencial" data-valor="17">Quero só os mapas</a>
+      <a class="btn contorno" href="https://pay.cakto.com.br/35h2y9x_1351778" data-plano="Essencial" data-valor="17">Quero só os mapas</a>
     </div>
     <div class="plano top">
       <span class="fita">&#9733; Mais completo · melhor valor</span>
-      <span class="nome">Completo + 4 bônus</span>
+      <span class="nome">Completo + 5 bônus</span>
       <h3>Mapas mentais + todos os bônus</h3>
       <p class="desc">Por apenas R$20 a mais, você leva o kit completo de estudo e consultório.</p>
       <div class="miniaturas" aria-hidden="true">
@@ -393,13 +396,14 @@ src="https://www.facebook.com/tr?id=1163156372713757&ev=PageView&noscript=1"
         <li class="b"><span>Lista de Substituições Alimentares <s>R$37</s></span></li>
         <li class="b"><span>Templates de Plano Alimentar <s>R$57</s></span></li>
         <li class="b"><span>Flashcards de Revisão Rápida <s>R$37</s></span></li>
+        <li class="b"><span>Calculadora de TMB, GET e Macros <s>R$57</s></span></li>
       </ul>
       <div class="preco-top">
-        <div><p class="de">De <s>R$275</s> por apenas</p><p class="valor"><small>R$</small>37</p></div>
-        <div class="economia">Você economiza<b>R$238</b></div>
+        <div><p class="de">De <s>R$332</s> por apenas</p><p class="valor"><small>R$</small>37</p></div>
+        <div class="economia">Você economiza<b>R$295</b></div>
       </div>
       <p class="pg">Pagamento único · acesso imediato a tudo</p>
-      <a class="btn" href="https://app.zuptos.com.br/checkout/f4e51428eb9a4f21" data-plano="Completo" data-valor="37">Quero o plano completo <svg><use href="#i-seta"/></svg></a>
+      <a class="btn" href="https://pay.cakto.com.br/74y64ps_1347300" data-plano="Completo" data-valor="37">Quero o plano completo <svg><use href="#i-seta"/></svg></a>
     </div>
   </div>
   <div class="wrap seguro">
@@ -431,7 +435,7 @@ src="https://www.facebook.com/tr?id=1163156372713757&ev=PageView&noscript=1"
     <details><summary>O produto é físico?</summary><p>Não. É um produto digital em PDF. Você acessa pelo celular, tablet ou computador e também pode imprimir para uso pessoal.</p></details>
     <details><summary>Para quem o material foi criado?</summary><p>Para estudantes e profissionais de nutrição que querem organizar, localizar e revisar conteúdos de forma visual. O material não substitui a formação profissional, os protocolos atualizados nem o julgamento clínico.</p></details>
     <details><summary>Como recebo o acesso?</summary><p>Logo após a confirmação do pagamento, você recebe o acesso por e-mail, pela plataforma de pagamento.</p></details>
-    <details><summary>Qual é a diferença entre os planos?</summary><p>O plano essencial inclui os mais de 100 mapas mentais. O plano completo inclui os mesmos mapas e os quatro bônus apresentados na página.</p></details>
+    <details><summary>Qual é a diferença entre os planos?</summary><p>O plano essencial inclui os mais de 100 mapas mentais. O plano completo inclui os mesmos mapas e os cinco bônus apresentados na página.</p></details>
     <details><summary>Posso imprimir os mapas?</summary><p>Sim. Os arquivos podem ser impressos para estudo e consulta pessoal, respeitando os termos de uso e sem redistribuição do material.</p></details>
     <details><summary>Os templates são editáveis?</summary><p>Sim. Os Templates de Plano Alimentar são um PDF preenchível: você digita direto nos campos pelo computador, tablet ou celular, ou imprime e preenche à mão.</p></details>
     <details><summary>Como funciona a garantia?</summary><p>Você tem 7 dias para conhecer o material. Se não gostar, solicite o reembolso pela plataforma de pagamento e receba 100% do valor de volta.</p></details>
